@@ -461,7 +461,7 @@ app.initFastClicks = function () {
         }
         needsFastClickTimeOut = setTimeout(function () {
             needsFastClick = false;
-        }, (app.device.ios || app.device.androidChrome ? 100 : 400));
+        }, (app.device.ios || app.device.androidChrome ? 25 : 100));
 
         if (app.params.tapHold) {
             tapHoldTimeout = setTimeout(function () {
