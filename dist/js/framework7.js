@@ -132,6 +132,8 @@
             materialRippleElements: '.ripple, a.link, a.item-link, .button, .modal-button, .tab-link, .label-radio, .label-checkbox, .actions-modal-button, a.searchbar-clear, .floating-button',
             // Auto init
             init: true,
+            // Additional param to disable panel swipeout
+            allowPanelOpen: true
         };
     
         // Extend defaults with parameters
@@ -3796,7 +3798,7 @@
             var views = $('.' + app.params.viewsClass);
         
             function handleTouchStart(e) {
-                if (!app.allowPanelOpen || (!app.params.swipePanel && !app.params.swipePanelOnlyClose) || isTouched) return;
+                if (!app.allowPanelOpen || (!app.params.swipePanel && !app.params.swipePanelOnlyClose) || isTouched || !app.params.allowPanelOpen) return;
                 if ($('.modal-in, .photo-browser-in').length > 0) return;
                 if (!(app.params.swipePanelCloseOpposite || app.params.swipePanelOnlyClose)) {
                     if ($('.panel.active').length > 0 && !panel.hasClass('active')) return;
